@@ -1,0 +1,237 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80')
+              no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.4s ease-in-out;
+}
+
+/* Container */
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Inputs, Select, Buttons */
+input,
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+#shareBtn {
+  background-color: #25d366;
+}
+
+#submitBtn {
+  background-color: #007bff;
+}
+
+small {
+  display: block;
+  font-size: 0.85em;
+  margin-top: -6px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Share and Success Messages */
+#shareCount,
+#shareStatus,
+#successMessage {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#successMessage {
+  color: green;
+  font-weight: bold;
+}
+
+/* Dark Mode Styling */
+body.dark {
+  /* keep everything else dark-mode related here */
+}
+
+
+body.dark .container {
+  background: rgba(30, 30, 30, 0.9);
+  color: #f1f1f1;
+}
+
+body.dark input,
+body.dark select {
+  background: #2c2c2c;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark button {
+  background-color: #333 !important;
+}
+
+body.dark small {
+  color: #aaa;
+}
+
+/* Shake animation for validation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+  border: 2px solid #ff4d4d !important;
+}
+
+/* Dark Mode Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  z-index: 10;
+}
+
+.theme-toggle .toggle-label {
+  color: white;
+}
+
+body.dark .theme-toggle .toggle-label {
+  color: #ccc;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  input,
+  button,
+  select {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+h2,
+small,
+label,
+#shareCount,
+#shareStatus,
+#successMessage {
+  color: white;
+}

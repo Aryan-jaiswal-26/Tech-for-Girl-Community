@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech for Girls Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider round"></span>
+    </label>
+    <span class="toggle-label">🌙 Dark Mode</span>
+  </div>
+
+  <div class="container">
+    <h2>Join Tech for Girls Community</h2>
+    <form
+      id="registrationForm"
+      action="https://script.google.com/macros/s/AKfycbzE0xAt7_ay0AnkegKA5AXzcRD5gnd3fzfA5q7Yj-4q_EusxHXHtMEWKpY8Sg9lW14N/exec"
+      method="POST"
+    >
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="college" placeholder="College Name" required />
+
+      <!-- Upload Screenshot as Link Only -->
+      <input type="url" id="screenshotLink" name="screenshot" placeholder="Paste screenshot link here" required />
+
+      <small>
+        📎 Upload your screenshot to 
+        <a href="https://drive.google.com" target="_blank">Google Drive</a>,
+        <a href="https://imgur.com/upload" target="_blank">Imgur</a>, or 
+        <a href="https://postimages.org" target="_blank">PostImages</a> and paste the link here.
+      </small>
+
+      <div id="shareCount">Click count: 0/5</div>
+      <div id="shareStatus"></div>
+
+      <button type="button" id="shareBtn">📤 Share on WhatsApp</button>
+      <button type="submit" id="submitBtn">Submit</button>
+
+      <div id="successMessage"></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
